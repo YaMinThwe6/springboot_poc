@@ -3,11 +3,13 @@ package com.yamin.e_comm.controller;
 import com.yamin.e_comm.dto.ApiResponse;
 import com.yamin.e_comm.model.Product;
 import com.yamin.e_comm.service.ProductService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -25,6 +27,11 @@ public class ProductController {
 
     @Autowired
     private ApiResponse apiResponse;
+
+    @GetMapping("/csrf_token")
+    public ResponseEntity<ApiResponse> getCsrfToken(HttpServletRequest request) {
+        return new ResponseEntity<>(new ApiResponse(true, "CSRF Token fetched!", request.getAttribute("_csrf")), HttpStatus.OK);
+    }
 
     @GetMapping("/products")
     public ResponseEntity<ApiResponse> getAllProducts() {
@@ -83,5 +90,11 @@ public class ProductController {
             return new ResponseEntity<>(new ApiResponse(true, "Deleted Successfully!"), HttpStatus.OK);
         }
         return new ResponseEntity<>(new ApiResponse(false, "Product Not Found!"), HttpStatus.NOT_FOUND);
+    }
+
+    @GetMapping("product/search")
+    public ResponseEntity<ApiResponse> searchProducts(@RequestParam String keyword) {
+        List<Product> products = service.searchProducts(keyword);
+        return new ResponseEntity<>(new ApiResponse(true, "Product list fetched!", products), HttpStatus.OK);
     }
 }
