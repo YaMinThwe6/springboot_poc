@@ -42,3 +42,31 @@ cd springboot_poc
 # Run the application
 ./mvnw spring-boot:run
 ```
+
+Application: http://localhost:8080
+
+H2 Console: http://localhost:8080/h2-console
+(Use jdbc:h2:mem:testdb as JDBC URL)
+
+## 📁 Project Structure (High-level)
+
+src/
+ └── main/
+     └── java/com/example/ecomm/
+         ├── controller/
+         ├── service/
+         ├── repository/
+         ├── model/
+         └── config/
+
+## 💡 Future Scope
+- AI-powered product recommendations using OpenAI or Sentence Transformers
+- Dockerize the full application for deployment
+- Switch to PostgreSQL for production setup
+
+## 🤝 Contributing
+Pull requests are welcome! Feel free to fork the repo and submit enhancements, bug fixes, or ideas.
+
+## 📬 Contact
+If you want to collaborate or have any questions, reach out via GitHub issues.
+
