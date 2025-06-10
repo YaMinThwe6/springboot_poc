@@ -6,7 +6,6 @@ This is a proof-of-concept backend for a simple e-commerce platform built with *
 
 - ✅ Product listing with details (name, brand, price, quantity, etc.)
 - ✅ CRUD operations for products
-- ✅ Category management
 - ✅ H2 database integration
 - ✅ RESTful API structure
 - ✅ Error handling and logging
@@ -18,7 +17,7 @@ This is a proof-of-concept backend for a simple e-commerce platform built with *
 |-----------------------|--------------------------------------------------------------------------|
 | **Authentication & Roles** | - User login and registration<br>- Role-based access (`ADMIN`, `CUSTOMER`, etc.)<br>- JWT-based stateless auth |
 | **AI Enhancements**        | - Product recommendation system based on description similarity<br>- Auto-summarization of product descriptions<br>- Smart search using semantic matching |
-| **Additional Features**    | - Order management<br>- User profile and address book<br>- Inventory alerts<br>- Integration with PostgreSQL for persistent data |
+| **Additional Features**    | - Order management<br>- Category management<br>- User profile and address book<br>- Inventory alerts<br>- Integration with PostgreSQL for persistent data |
 
 
 ## 🧰 Tech Stack
