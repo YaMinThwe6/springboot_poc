@@ -48,7 +48,16 @@ H2 Console: http://localhost:8080/h2-console
 (Use jdbc:h2:mem:testdb as JDBC URL)
 
 ## 📁 Project Structure (High-level)
-<pre> ``` src/ └── main/ └── java/ └── com/ └── example/ └── ecomm/ ├── controller/ ├── service/ ├── repository/ ├── model/ └── config/ ``` </pre>
+<pre> ``` 
+src/
+ └── main/
+     └── java/com/example/ecomm/
+         ├── controller/
+         ├── service/
+         ├── repository/
+         ├── model/
+         └── config/
+``` </pre>
 
 ## 💡 Future Scope
 - AI-powered product recommendations using OpenAI or Sentence Transformers
